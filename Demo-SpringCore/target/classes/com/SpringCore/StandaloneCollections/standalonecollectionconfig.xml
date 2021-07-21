@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+					 	https://www.springframework.org/schema/beans/spring-beans.xsd
+					 	http://www.springframework.org/schema/context
+					 	https://www.springframework.org/schema/context/spring-context.xsd
+					 	http://www.springframework.org/schema/util
+					 	https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!-- Standalone Collections Type Dependency Injection -->
+	<!-- Using Setter Method -->
+
+
+	<!-- Standalone List | LinkedList -->
+	<util:list list-class="java.util.LinkedList" id="phone_no">
+		<value>1234567852</value>
+		<value>6554268754</value>
+		<value>8589654265</value>
+		<null />
+	</util:list>
+
+	<!-- Standalone Set | -->
+	<util:set set-class="java.util.TreeSet" id="address_locations">
+		<value>Goa</value>
+		<value>Delhi</value>
+		<value>Kanpur</value>
+	</util:set>
+
+	<!-- Standalone Map | HashMap -->
+	<util:map map-class="java.util.HashMap" id="course_name">
+		<entry key="java" value="2 months" />
+		<entry key="python" value="1.2 months" />
+		<entry key="c" value="1 months" />
+	</util:map>
+
+	<!-- Standalone Property | -->
+	<util:properties id="props_name">
+		<prop key="fname">R</prop>
+		<prop key="mname">t</prop>
+		<prop key="lname">x</prop>
+	</util:properties>
+
+
+
+
+	<!-- 1st bean -->
+	<bean class="com.SpringCore.StandaloneCollections.Emp" name="emp1">
+		<property name="name" value="Rtx" />
+
+		<!-- List Type Data -->
+		<property name="phones" ref="phone_no" />
+
+		<!-- Set Type Data -->
+		<property name="addresses" ref="address_locations" />
+
+		<!-- Map Type Data -->
+		<property name="courses" ref="course_name" />
+
+		<!-- Property Data -->
+		<property name="props" ref="props_name" />
+	</bean>
+
+
+</beans>

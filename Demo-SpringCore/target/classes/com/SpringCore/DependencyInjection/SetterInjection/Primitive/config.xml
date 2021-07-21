@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+					 	https://www.springframework.org/schema/beans/spring-beans.xsd
+					 	http://www.springframework.org/schema/context
+					 	https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- Primitive Type Dependency Injection -->
+<!-- Using Setter Method -->
+
+	<!-- 1st bean -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Primitive.Student" name="student1">
+			<!-- Using value as tag -->
+			<property name="studentId">
+				<value>101</value>
+			</property>
+			<property name="studentName">
+				<value>Debraj</value>
+			</property>
+			<property name="studentAddress">
+				<value>kolkata</value>
+			</property>
+		</bean>
+	
+	
+	<!-- 2nd bean -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Primitive.Student" name="student2">
+			<!-- Using Value as attribute --> 
+			<property name="studentId" value="102" />
+			<property name="studentName" value="Sumesh" />
+			<property name="studentAddress" value="Japan" />
+		</bean>
+	
+	
+	<!-- 3rd bean -->
+		<!-- Using P Schema -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Primitive.Student" name="student3" p:studentId="103" p:studentName="LOL" p:studentAddress="Mumbai" />
+	
+	
+</beans>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+					 	https://www.springframework.org/schema/beans/spring-beans.xsd
+					 	http://www.springframework.org/schema/context
+					 	https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- Reference Type Dependency Injection -->
+<!-- Using Setter Method -->
+
+	<!-- 1st bean -->
+		<!-- Creating Object of B -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Reference.B" name="bref1">
+			<property name="y" value="30" />
+		</bean>
+		<!-- Creating Object of A -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Reference.A" name="aref1">
+			<property name="x" value="12" />
+			<!-- Using ref as tag -->
+			<property name="obj">
+				<ref bean="bref1" />
+			</property>
+		</bean>
+
+
+	<!-- 2nd bean -->
+		<!-- Creating Object of B -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Reference.B" name="bref2">
+			<property name="y" value="6" />
+		</bean>
+		<!-- Creating Object of A -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Reference.A" name="aref2">
+			<property name="x" value="20" />
+			<!-- Using ref as attribute -->
+			<property name="obj" ref="bref2" />
+		</bean>
+		
+		
+	<!-- 3rd bean -->
+		<!-- Creating Object of B -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Reference.B" name="bref3">
+			<property name="y" value="55" />
+		</bean>
+		<!-- Creating Object of A -->
+		<!-- Using P schema  -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Reference.A" name="aref3" p:x="66" p:obj-ref="bref3" />
+
+</beans>
