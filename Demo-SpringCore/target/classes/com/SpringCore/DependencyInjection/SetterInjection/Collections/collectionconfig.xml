@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+					 	https://www.springframework.org/schema/beans/spring-beans.xsd
+					 	http://www.springframework.org/schema/context
+					 	https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- Collections Type Dependency Injection -->
+<!-- Using Setter Method -->
+
+	<!-- 1st bean -->
+		<bean class="com.SpringCore.DependencyInjection.SetterInjection.Collections.Emp" name="emp1">
+			<property name="name" value="Rtx" />
+			
+			<!-- List Type Data -->
+			<property name="phones">
+				<list>
+					<value>1234567852</value>
+					<value>6554268754</value>
+					<value>8589654265</value>
+					<null />
+				</list>
+			</property>
+			
+			<!-- Set Type Data -->
+			<property name="addresses">
+				<set>
+					<value>Delhi</value>
+					<value>Kanpur</value>
+					<value>Goa</value>
+				</set>
+			</property>
+			
+			<!-- Map Type Data -->
+			<property name="courses">
+				<map>
+					<entry key="java" value="2months" />
+					<entry key="python" value="1.2months" />
+					<entry key="c" value="1months" />
+				</map>
+			</property>
+			
+			<!-- Property Data -->
+			<property name="props">
+				<props>
+					<prop key="fname">R</prop>
+					<prop key="mname">t</prop>
+					<prop key="lname">x</prop>
+				</props>
+			</property>
+		</bean>
+	
+	
+</beans>
